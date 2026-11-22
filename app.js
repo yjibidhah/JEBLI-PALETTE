@@ -51,9 +51,6 @@ function closeMenu(){nav.classList.remove('open');menuButton.setAttribute('aria-
 menuButton.addEventListener('click',()=>{const opening=!nav.classList.contains('open');nav.classList.toggle('open',opening);menuButton.setAttribute('aria-expanded',String(opening));menuButton.setAttribute('aria-label',opening?'Fermer le menu':'Ouvrir le menu')});
 nav.addEventListener('click',e=>{if(e.target.closest('a'))closeMenu()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
 $('#year').textContent=new Date().getFullYear();
-// The 20 supplied logos are sample layout elements, not verified client references.
-const clientNames=['Azura','LafargeHolcim','BIM','Steripharma','Sahel','Thavin','SNTL','Aveiro Maroc','Driscoll’s','Technopure','Medmilk','QualiPrim','OGE','Matysha','L’Espadon Conserves','PGS Group','Duroc','Pescasud','Doha','Lamatern'];
-$('#clients-grid').innerHTML=clientNames.map((name,i)=>`<div class="client-logo" title="Illustration de référence : ${name}"><img src="assets/logos-demo/logo-${String(i+1).padStart(2,'0')}.webp" alt="Logo d'exemple : ${name}" loading="lazy"></div>`).join('');
 
 const form=$('#contact-form'),feedback=$('#form-feedback');
 function safeText(s){return String(s).replace(/[<>&"']/g,'').trim()}
