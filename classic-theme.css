@@ -12,6 +12,7 @@ body {background:#faf9f5;color:#1e3026;font-family:'DM Sans',Arial,sans-serif}
 .shell{width:min(1220px,calc(100% - 72px))}
 .section-pad{padding:100px 0}
 .section-no{color:#337f60;letter-spacing:.16em;font-weight:800}
+/* Barre, navigation et marque */
 .info-line{background:#215c46;border-bottom:0}
 .info-line-inner,.info-line a{color:#f5fff5}
 .round-dot{background:#bce39d;box-shadow:0 0 0 4px #bce39d25}
@@ -24,6 +25,7 @@ body {background:#faf9f5;color:#1e3026;font-family:'DM Sans',Arial,sans-serif}
 .nav>a:not(.nav-touch):hover{color:#215c46}
 .nav-touch{color:#fff;background:linear-gradient(122deg,#327d5e,#1d5944);border:0;border-radius:11px;padding:14px 22px;box-shadow:0 9px 24px rgba(40,106,76,.16)}
 .nav-touch:hover{background:#327d5e;transform:translateY(-1px)}
+/* Accueil : dégradé lumineux de la V4, photo arrondie et boutons confortables */
 .hero{background:linear-gradient(110deg,#fcfcf7 10%,#eff7ee 96%)}
 .hero-ruling{display:none}
 .hero-inner{min-height:620px;padding:68px 0 45px;gap:6%;grid-template-columns:1.05fr .95fr;align-items:center}
@@ -50,6 +52,7 @@ body {background:#faf9f5;color:#1e3026;font-family:'DM Sans',Arial,sans-serif}
 .figure-corner{background:rgba(255,255,255,.15);backdrop-filter:blur(3px)}
 .hero-footline{height:80px;border-color:#d4e3d7;color:#53745f}
 .hero-footline-center{color:#63836d}
+/* Présentation : sobre, chaleureuse, sans effet magazine austère */
 .manifesto{background:linear-gradient(107deg,#eef6ec,#e6f0e7)}
 .manifesto-grid{grid-template-columns:.22fr 1.3fr .25fr;padding:66px 0;gap:30px}
 .manifesto-text h2,.section-heading h2,.heritage-copy h2,.questions h2{font-family:'Manrope',sans-serif;font-weight:800;letter-spacing:-.055em;line-height:1.2;color:#1e3026}
@@ -59,6 +62,7 @@ body {background:#faf9f5;color:#1e3026;font-family:'DM Sans',Arial,sans-serif}
 .manifesto-seal{background:#fffefa;border:1px solid #c7ddca;color:#327d5e;box-shadow:0 12px 28px rgba(34,80,51,.06);transform:rotate(-8deg)}
 .manifesto-seal>span:first-child{font:800 55px/1 'Manrope',sans-serif}
 .asterisk{color:#80ad8c}
+/* Catalogue : trois cartes identiques, photos généreuses et filtres arrondis */
 .catalogue{background:#fffefb}
 .section-heading{margin-bottom:34px}
 .section-heading h2{font-size:clamp(35px,4vw,52px)}
@@ -84,6 +88,7 @@ body {background:#faf9f5;color:#1e3026;font-family:'DM Sans',Arial,sans-serif}
 .product-actions button{border:1px solid #bfd5c3;border-radius:8px;color:#215c46;padding:10px 11px;font-size:11px}
 .product-actions button:hover{background:#215c46;border-color:#215c46}
 .catalogue-after{border-color:#e3eae1}
+/* Entreprise : images superposées avec coins arrondis */
 .heritage{background:#f2f7ee}
 .heritage-grid{gap:7%}
 .heritage-photo-panel{padding-right:48px;min-height:555px}
@@ -92,10 +97,12 @@ body {background:#faf9f5;color:#1e3026;font-family:'DM Sans',Arial,sans-serif}
 .heritage-copy h2{font-size:clamp(38px,4vw,57px);line-height:1.22}
 .heritage-copy-inner p{color:#5b7163;line-height:1.9}
 .heritage-photo-caption{color:#668574}
+/* Repères : chiffres clairs et lisibles */
 .proof{background:linear-gradient(105deg,#dcefe1,#eaf5e6)}
 .proof-header{border-color:#c0dac4}
 .proof-grid strong{font-family:'Manrope',sans-serif;font-weight:800;color:#215c46}
 .proof-grid p{color:#536b59}
+/* Services en cartes souples plutôt qu'en tableau d'imprimerie */
 .service-section{background:#fffefb}
 .service-lines{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;border:0}
 .service-lines article{display:flex;flex-direction:column;align-items:flex-start;gap:16px;padding:26px;background:#f7faf5;border:1px solid #e4ede2;border-radius:18px;min-height:260px}
@@ -103,6 +110,7 @@ body {background:#faf9f5;color:#1e3026;font-family:'DM Sans',Arial,sans-serif}
 .service-lines p{font-size:13px;line-height:1.75;color:#6c7f70}
 .service-index{display:flex;align-items:center;justify-content:center;background:#dcece0;color:#215c46;width:43px;height:43px;border-radius:12px;font-size:11px}
 .service-symbol{margin-top:auto;color:#337f60;font-size:30px}
+/* Références : fond presque blanc, cartes blanches et ombres discrètes */
 .references{background:#f7f8f4}
 .references-top h2{font:800 clamp(34px,4vw,52px)/1.2 'Manrope',sans-serif;color:#1e3026;letter-spacing:-.055em}
 .references-top h2 em{font-style:normal;color:#337f60}
@@ -110,6 +118,7 @@ body {background:#faf9f5;color:#1e3026;font-family:'DM Sans',Arial,sans-serif}
 .client-logo{border:1px solid #e8ece5;border-radius:13px;background:#fff;box-shadow:0 5px 18px rgba(41,72,50,.07);transition:transform .2s,box-shadow .2s}
 .client-logo:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(41,72,50,.12)}
 .references-warning{color:#637665;background:#fefbf1;border:1px solid #f0e7ca;border-radius:10px;padding:12px 16px}
+/* Questions et contact */
 .questions{background:#fffefb}
 .questions h2{font-size:clamp(35px,3.8vw,52px)}
 .questions-list{border-color:#e0e9df}
@@ -134,16 +143,28 @@ body {background:#faf9f5;color:#1e3026;font-family:'DM Sans',Arial,sans-serif}
 .product-dialog{background:#fffefb;border-radius:18px;overflow:hidden}
 .dialog-content h2{font:800 clamp(30px,3.6vw,45px)/1.2 'Manrope',sans-serif;color:#215c46}
 .dialog-meta span{border-radius:8px}
+/* Responsive */
 @media(max-width:1180px){.shell{width:min(100% - 50px,1220px)}.hero-inner{gap:4%}.hero h1{font-size:clamp(42px,5.7vw,68px)!important}.product-grid{gap:15px}.product-card:nth-child(n) .product-media{height:235px}.product-actions{flex-direction:column}}
 @media(max-width:860px){.shell{width:calc(100% - 38px)}.nav{background:#fffefb}.hero-inner{min-height:0;padding:42px 0;gap:24px;grid-template-columns:1fr 1fr}.hero h1{font-size:clamp(38px,5.4vw,53px)!important}.hero-figure{min-height:0;height:475px;max-height:475px;border-radius:75px 20px 20px 20px}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.manifesto-grid{grid-template-columns:.2fr 1fr;gap:22px}.manifesto-seal{display:none}.service-lines{grid-template-columns:repeat(2,1fr)}.heritage-photo-main{height:450px}.contact-form{padding:27px}.contact-intro h2{font-size:clamp(36px,4.6vw,55px)}}
 @media(max-width:640px){.shell{width:calc(100% - 32px)}.info-line{background:#215c46}.info-line-inner>span:last-child{color:#fff}.header-inner{min-height:70px}.hero-inner{display:flex;flex-direction:column;gap:24px;padding:28px 0 0}.hero-copy{padding:27px 0 0;width:100%}.hero h1{font-size:clamp(40px,10vw,60px)!important;margin:22px 0 24px}.hero-bottom-copy p{font-size:14px}.hero-actions-classic{gap:8px}.hero-secondary-cta{min-height:48px}.hero-figure{width:100%;min-height:0;height:380px;max-height:380px;border-radius:78px 18px 18px 18px}.hero-footline{height:53px}.manifesto-grid{display:block;padding:55px 0}.manifesto-text h2{font-size:35px}.manifesto-text p{font-size:14px}.section-pad{padding:74px 0}.section-heading h2{font-size:35px}.catalogue-toolbar{margin-bottom:20px}.filter-buttons{gap:7px}.filter{font-size:10.5px;padding:10px 12px}.product-grid{grid-template-columns:1fr;gap:20px}.product-card:nth-child(n) .product-media{height:255px}.product-main{min-height:0}.product-actions{flex-direction:row}.product-actions button{white-space:normal}.heritage-grid{grid-template-columns:1fr;gap:23px}.heritage-photo-panel{min-height:0;padding-right:36px;padding-bottom:60px}.heritage-photo-main{height:320px;border-radius:78px 19px 19px 19px}.heritage-photo-inset{border-width:6px}.heritage-copy h2{font-size:43px}.service-lines{grid-template-columns:1fr;gap:13px}.service-lines article{min-height:0;padding:22px}.service-symbol{margin:0}.references-top h2{font-size:38px}.clients-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.client-logo{min-height:84px;padding:8px}.contact-grid{grid-template-columns:1fr;gap:28px}.contact-intro h2{font-size:49px}.contact-form{border-radius:18px;padding:25px 20px;box-shadow:0 15px 35px rgba(33,80,47,.08)}.contact-form h3{font-size:32px}.footer-inner{grid-template-columns:1fr 1fr}.mobile-phone{border-radius:12px}}
 @media(max-width:375px){.hero h1{font-size:39px!important}.hero-secondary-cta{padding:11px 12px;font-size:11px}.hero-bottom-copy .arrow-link{padding:11px 12px;font-size:11px}.product-actions button{padding:10px 7px;font-size:10px}.clients-grid{grid-template-columns:repeat(2,1fr)}}
 
-/* Catalogue EPAL : présentation simple, une seule référence */
+/* Fiches EPAL : disponibilité et galerie de trois références */
 .inventory-count{display:inline-flex;gap:10px;align-items:center;font-size:12px;font-weight:800;letter-spacing:.08em;color:#256c4b}
 .stock-dot{display:block;width:9px;height:9px;background:#50a970;border-radius:50%;box-shadow:0 0 0 4px rgba(80,169,112,.12)}
 .stock-availability{color:#276a4a!important}
 .stock-availability strong{color:#177642;font-weight:800}
-.product-grid:has(>.product-card:only-child){grid-template-columns:minmax(0,375px)}
-.product-card .product-main{min-height:135px}
-@media(max-width:640px){.product-grid:has(>.product-card:only-child){grid-template-columns:1fr}.inventory-count{font-size:10px}}
+.product-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:23px}
+.product-card .product-main{min-height:145px}
+.product-media>img{object-fit:contain;background:#fff}
+.product-card:nth-child(n) .product-media{background:#fff;height:280px}
+.hero-figure>img{object-fit:cover;object-position:center 52%;image-rendering:auto}
+@media(max-width:640px){.product-grid{grid-template-columns:1fr}.inventory-count{font-size:10px}.product-card:nth-child(n) .product-media{height:275px}}
+
+/* Grille finale : 3 colonnes ordinateur, 2 tablette, 1 téléphone. */
+@media (min-width:861px){.product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (min-width:641px) and (max-width:860px){.product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.product-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* Disponibilité sur commande : distinguer du statut EN STOCK */
+.stock-availability.on-order,.stock-availability.on-order strong{color:#a06430!important}

@@ -1,36 +1,27 @@
-# JEBLI PALETTE — Thème classique V7 (vert doux, crème et bois)
+# JEBLI PALETTE — Site HD prêt pour GitHub + Cloudflare Pages
 
-Site vitrine original avec photographie des palettes, catalogue filtrable, fiches produits, navigation mobile, chiffres, FAQ, contact et demande de devis.
+Cette archive contient **les fichiers du site à la racine** (`index.html`, `styles.css`, `classic-theme.css`, `app.js`, `config.js`, `assets/`).
 
-## Ouvrir en local
+## Ce qui est inclus
+- Design vert doux, crème et brun bois conservé.
+- Photo d’accueil **originale** DSC02724 (2048 × 1365 px) sans redimensionnement ni recompression supplémentaire.
+- Catalogue de **10 produits**, dont 9 **EN STOCK** et la **Palette 110 SUR COMMANDE**, avec leurs photographies PNG originales, non recompressées. Les nouveaux produits sont Palette 110, Palette 114 FACIMAG, Palette 105 et Palette 105 ROUGE.
+- Photos originales du camion et du chariot dans « Ancrés dans le bois. Tournés vers demain. ».
+- Affichage **3 produits par ligne sur ordinateur**, 2 sur tablette, 1 sur téléphone afin de garder des fiches lisibles.
+- Logo, logos de démonstration, coordonnées et formulaire conservés.
 
-Décompressez l'archive et ouvrez `index.html` dans Chrome ou Edge. Les images et logos sont inclus dans `assets/` et fonctionnent sans connexion. Les polices utilisent Google Fonts avec polices de secours locales.
+## Installation sur GitHub
+1. Décompresser le ZIP sur votre PC.
+2. Aller dans https://github.com/yjibidhah/JEBLI-PALETTE
+3. Ouvrir `Add file` → `Upload files`, sélectionner **le contenu** du dossier extrait (fichiers et dossier assets), pas le ZIP.
+4. Vérifier que `index.html` reste à la racine, puis `Commit changes` sur `main`.
+5. Les fichiers qui ont été supprimés du catalogue peuvent subsister dans GitHub si GitHub ne les efface pas explicitement ; ils ne sont plus utilisés par le site.
+6. Ouvrir le site Cloudflare Pages et actualiser avec Ctrl+F5 après la publication.
 
-## Publication GitHub + Cloudflare Pages
+Pour un premier upload, choisir la branche `main` et garder le dossier de publication `.`. Aucun outil de build n’est requis.
 
-Ce dépôt est relié au projet Cloudflare Pages `jebli-palette` (domaine prévu : https://jebli-palette.pages.dev/). Le site est statique (HTML/CSS/JS), sans build. Les modifications de la branche `main` devraient déclencher un déploiement automatique dès que l'intégration GitHub–Cloudflare est active.
-
-### Thème en vigueur
-
-`index.html` charge `styles.css`, puis `classic-theme.css` pour retrouver les couleurs vert doux, crème et brun bois du design précédent. Le catalogue, les photos et les coordonnées restent inchangés.
-
-### Vérification du déploiement
-
-Contrôler dans Cloudflare > Workers & Pages > `jebli-palette` > Deployments que le dernier commit de `main` est bien publié. Si un commit n'apparaît pas, vérifier dans Settings > Builds > Git repository l'autorisation de l'application GitHub Cloudflare Workers and Pages.
-
-## Contact
-
-- Téléphone / WhatsApp : +212 660 406043
-- Email de réception prévu : jeblipalette@outlook.com
-- Le formulaire utilise FormSubmit seulement lorsque le site est hébergé et connecté à Internet. L'adresse doit être activée par son titulaire lors du premier envoi. En local, un lien `mailto:` permet d'ouvrir la messagerie. L'envoi automatique ne peut pas être garanti avant activation et test en conditions réelles.
-- Pour modifier les coordonnées, ouvrez `config.js` (pensez aussi à changer les liens affichés dans `index.html`).
-
-## Avant une publication publique
-
-- Vérifier les chiffres **+200 clients**, **+50 membres**, **+15 années d'expérience**, fournis pour le projet.
-- Les **20 logos** dans « Ils nous ont fait confiance » sont des exemples de présentation issus de la capture fournie et **ne constituent pas des preuves de collaboration**. Ne pas publier comme clients sans confirmation et autorisation.
-- Valider les formats, descriptions, disponibilités et éventuelles normes/certifications des produits.
-
-## Images
-
-Toutes les photos de palettes ont été fournies directement pour le projet. Versions optimisées (JPEG) dans `assets/photos/`. Aucun hébergement Google Drive n'est nécessaire pour les afficher.
+## Notes
+- **Ne pas compresser davantage** les photographies du site et des produits : les fichiers ont été copiés directement depuis les originaux fournis.
+- Le formulaire utilise FormSubmit et nécessite l’activation de l’adresse `jeblipalette@outlook.com` pour l’envoi automatique. À tester après mise en ligne.
+- Les logos clients dans `assets/logos-demo` sont des exemples : les relations commerciales doivent être confirmées avant tout affichage public comme références réelles.
+- La mise à jour du ZIP ne modifie pas GitHub, Cloudflare ou Netlify.

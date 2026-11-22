@@ -1,24 +1,29 @@
 'use strict';
 const config=window.JEBLI_CONFIG||{};
 const products=[
- {id:'euro-epal-blanc',title:'Palette EURO/EPAL BLANC',tag:'PALETTE EURO/EPAL',cat:'bois',photo:'assets/photos/palette-euro-epal-blanc.webp',size:'1200 × 800',availability:'EN STOCK',description:'Palette EURO/EPAL BLANC au format 1200 × 800. Disponible en stock. Pour connaître les quantités et demander un devis, contactez JEBLI PALETTE.'}
+ {id:'euro-epal-blanc',title:'Palette EURO/EPAL BLANC',tag:'PALETTE EURO/EPAL',cat:'bois',photo:'assets/photos/palette-euro-epal-blanc-hd.png',size:'1200 × 800',availability:'EN STOCK',description:'Palette EURO/EPAL BLANC au format 1200 × 800 mm. Disponible en stock. Pour connaître les quantités disponibles et demander un devis, contactez JEBLI PALETTE.'},
+ {id:'euro-epal-bleu-speciale',title:'Palette EURO/EPAL BLEU SPÉCIALE',tag:'PALETTE EURO/EPAL',cat:'bois',photo:'assets/photos/palette-euro-epal-bleu-speciale-hd.png',size:'1200 × 800',availability:'EN STOCK',description:'Palette EURO/EPAL BLEU SPÉCIALE au format 1200 × 800 mm. Disponible en stock. Pour connaître les quantités disponibles et demander un devis, contactez JEBLI PALETTE.'},
+ {id:'euro-epal-bleu-normal',title:'Palette EURO/EPAL BLEU NORMAL',tag:'PALETTE EURO/EPAL',cat:'bois',photo:'assets/photos/palette-euro-epal-bleu-normal-hd.png',size:'1200 × 800',availability:'EN STOCK',description:'Palette EURO/EPAL BLEU NORMAL au format 1200 × 800 mm. Disponible en stock. Pour connaître les quantités disponibles et demander un devis, contactez JEBLI PALETTE.'},
+ {id:'palette-114',title:'Palette 114',tag:'PALETTE BOIS',cat:'bois',photo:'assets/photos/palette-114-hd.png',size:'1140 × 1140',availability:'EN STOCK',description:'Palette 114 au format 1140 × 1140 mm. Disponible en stock. Pour connaître les quantités disponibles et demander un devis, contactez JEBLI PALETTE.'},
+ {id:'palette-120',title:'Palette 120',tag:'PALETTE BOIS',cat:'bois',photo:'assets/photos/palette-120-hd.png',size:'1200 × 1000',availability:'EN STOCK',description:'Palette 120 au format 1200 × 1000 mm. Disponible en stock. Pour connaître les quantités disponibles et demander un devis, contactez JEBLI PALETTE.'},
+ {id:'palette-80',title:'Palette 80',tag:'PALETTE BOIS',cat:'bois',photo:'assets/photos/palette-80-hd.png',size:'1200 × 800',availability:'EN STOCK',description:'Palette 80 au format 1200 × 800 mm. Disponible en stock. Pour connaître les quantités disponibles et demander un devis, contactez JEBLI PALETTE.'},
+ {id:'palette-110',title:'Palette 110',tag:'PALETTE BOIS',cat:'bois',photo:'assets/photos/palette-110-hd.png',size:'1100 × 1100',availability:'SUR COMMANDE',description:'Palette 110 au format 1100 × 1100 mm. Disponible sur commande. Contactez JEBLI PALETTE pour connaître les modalités, les quantités et demander un devis.'},
+ {id:'palette-114-facimag',title:'Palette 114 FACIMAG',tag:'PALETTE BOIS',cat:'bois',photo:'assets/photos/palette-114-facimag-hd.png',size:'1140 × 1140',availability:'EN STOCK',description:'Palette 114 FACIMAG au format 1140 × 1140 mm. Disponible en stock. Contactez JEBLI PALETTE pour connaître les quantités et demander un devis.'},
+ {id:'palette-105',title:'Palette 105',tag:'PALETTE BOIS',cat:'bois',photo:'assets/photos/palette-105-hd.png',size:'1050 × 1050',availability:'EN STOCK',description:'Palette 105 au format 1050 × 1050 mm. Disponible en stock. Contactez JEBLI PALETTE pour connaître les quantités et demander un devis.'},
+ {id:'palette-105-rouge',title:'Palette 105 ROUGE',tag:'PALETTE BOIS',cat:'bois',photo:'assets/photos/palette-105-rouge-hd.png',size:'1050 × 1050',availability:'EN STOCK',description:'Palette 105 ROUGE au format 1050 × 1050 mm. Disponible en stock. Contactez JEBLI PALETTE pour connaître les quantités et demander un devis.'}
 ];
 const $=q=>document.querySelector(q),$$=q=>Array.from(document.querySelectorAll(q));
 const productGrid=$('#product-grid');
 function renderProducts(category='all'){
- const visible=products.filter(p=>category==='all'||p.cat===category);
+ const visible=products;
  productGrid.innerHTML=visible.map((p,i)=>`<article class="product-card">
    <div class="product-media" data-show="${p.id}"><img src="${p.photo}" alt="Photographie : ${p.title}" loading="lazy"><span class="photo-index">${String(i+1).padStart(2,'0')}</span></div>
    <div class="product-meta"><span>${p.tag}</span><span>JEBLI / ${p.size}</span></div>
-   <div class="product-main"><div><h3>${p.title}</h3><p>Mesure : ${p.size}</p><p class="stock-availability">Disponibilité : <strong>${p.availability}</strong></p></div>
+   <div class="product-main"><div><h3>${p.title}</h3><p>Mesure : ${p.size}</p><p class="stock-availability ${p.availability==='SUR COMMANDE'?'on-order':''}">Disponibilité : <strong>${p.availability}</strong></p></div>
    <div class="product-actions"><button type="button" data-detail="${p.id}" aria-label="Détails de ${p.title}">Détails ↗</button><button type="button" class="card-quote" data-quote="${p.id}" aria-label="Demander un devis pour ${p.title}">Devis ↗</button></div></div>
  </article>`).join('');
 }
 renderProducts();
-$$('.filter').forEach(b=>b.addEventListener('click',()=>{
- $$('.filter').forEach(other=>{other.classList.toggle('active',other===b);other.setAttribute('aria-pressed',String(other===b));});
- renderProducts(b.dataset.filter);
-}));
 const dialog=$('#product-dialog');
 function hideDialog(){if(dialog.open)dialog.close()}
 $('.dialog-close').addEventListener('click',hideDialog);
@@ -26,7 +31,7 @@ dialog.addEventListener('click',e=>{if(e.target===dialog)hideDialog()});
 function detailProduct(id){const p=products.find(x=>x.id===id);if(!p)return;
  $('#dialog-image').src=p.photo;$('#dialog-image').alt=`Photo ${p.title}`;
  $('#dialog-title').textContent=p.title;$('#dialog-description').textContent=p.description;
- $('#dialog-meta').innerHTML=`<span>Mesure : ${p.size}</span><span class="stock-availability">Disponibilité : <strong>${p.availability}</strong></span><span>Prix sur devis</span>`;
+ $('#dialog-meta').innerHTML=`<span>Mesure : ${p.size}</span><span class="stock-availability ${p.availability==='SUR COMMANDE'?'on-order':''}">Disponibilité : <strong>${p.availability}</strong></span><span>Prix sur devis</span>`;
  $('#dialog-quote').onclick=()=>quoteProduct(id);
  if(typeof dialog.showModal==='function')dialog.showModal();
 }
