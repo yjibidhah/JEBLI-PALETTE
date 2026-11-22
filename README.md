@@ -1,4 +1,4 @@
-# JEBLI PALETTE — Édition Signature
+# JEBLI PALETTE — Thème classique V7 (vert doux, crème et bois)
 
 Site vitrine original avec photographie des palettes, catalogue filtrable, fiches produits, navigation mobile, chiffres, FAQ, contact et demande de devis.
 
@@ -6,9 +6,17 @@ Site vitrine original avec photographie des palettes, catalogue filtrable, fiche
 
 Décompressez l'archive et ouvrez `index.html` dans Chrome ou Edge. Les images et logos sont inclus dans `assets/` et fonctionnent sans connexion. Les polices utilisent Google Fonts avec polices de secours locales.
 
-## Publier éventuellement
+## Publication GitHub + Cloudflare Pages
 
-Importez le dossier décompressé sur l'hébergement de votre choix. **Aucun déploiement n'a été effectué.** Le site est statique (HTML/CSS/JS), sans serveur à installer.
+Ce dépôt est relié au projet Cloudflare Pages `jebli-palette` (domaine prévu : https://jebli-palette.pages.dev/). Le site est statique (HTML/CSS/JS), sans build. Les modifications de la branche `main` devraient déclencher un déploiement automatique dès que l'intégration GitHub–Cloudflare est active.
+
+### Thème en vigueur
+
+`index.html` charge `styles.css`, puis `classic-theme.css` pour retrouver les couleurs vert doux, crème et brun bois du design précédent. Le catalogue, les photos et les coordonnées restent inchangés.
+
+### Vérification du déploiement
+
+Contrôler dans Cloudflare > Workers & Pages > `jebli-palette` > Deployments que le dernier commit de `main` est bien publié. Si un commit n'apparaît pas, vérifier dans Settings > Builds > Git repository l'autorisation de l'application GitHub Cloudflare Workers and Pages.
 
 ## Contact
 
