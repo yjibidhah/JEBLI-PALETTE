@@ -1,12 +1,7 @@
 'use strict';
 const config=window.JEBLI_CONFIG||{};
 const products=[
- {id:'europe',title:'Palette Europe',tag:'PALETTE BOIS',cat:'bois',photo:'assets/photos/palette-europe.jpg',size:'Format Europe',description:'Une palette de type Europe photographiée dans notre parc. Adaptée aux besoins de manutention et de stockage selon les caractéristiques et disponibilités confirmées.'},
- {id:'industrielle',title:'Palette industrielle',tag:'PALETTE BOIS',cat:'bois',photo:'assets/photos/palette-industrielle.jpg',size:'Usage industriel',description:'Une référence de palette destinée aux flux logistiques et industriels. Les caractéristiques exactes et les charges admissibles doivent être précisées selon votre utilisation.'},
- {id:'bleue',title:'Palette Europe bleue',tag:'RÉEMPLOI',cat:'reemploi',photo:'assets/photos/palette-europe-bleue.jpg',size:'Palette bois bleue',description:'Une référence de palette Europe bleue photographiée dans notre parc. Son état, sa disponibilité et ses conditions d’utilisation sont à confirmer selon le besoin.'},
- {id:'1200x800',title:'Palette 1200 × 800',tag:'PALETTE BOIS',cat:'bois',photo:'assets/photos/palette-1200x800.jpg',size:'1200 × 800 mm',description:'Une palette bois au format 1200 × 800 mm, pour différents besoins de stockage et manutention. Les quantités et configurations seront confirmées lors du devis.'},
- {id:'1100x1100',title:'Palette 1100 × 1100',tag:'PALETTE BOIS',cat:'bois',photo:'assets/photos/palette-1100x1100.jpg',size:'1100 × 1100 mm',description:'Une palette bois au format carré 1100 × 1100 mm. Disponible selon les stocks et les besoins particuliers de vos opérations logistiques.'},
- {id:'carree',title:'Palette carrée 960 à 1050',tag:'PALETTE BOIS',cat:'bois',photo:'assets/photos/palette-carree-960-1050.jpg',size:'960 à 1050 mm',description:'Palettes de formats carrés entre 960 et 1050 mm. Les dimensions exactes et les modalités de fourniture sont à confirmer avec JEBLI PALETTE.'}
+ {id:'euro-epal-blanc',title:'Palette EURO/EPAL BLANC',tag:'PALETTE EURO/EPAL',cat:'bois',photo:'assets/photos/palette-euro-epal-blanc.webp',size:'1200 × 800',availability:'EN STOCK',description:'Palette EURO/EPAL BLANC au format 1200 × 800. Disponible en stock. Pour connaître les quantités et demander un devis, contactez JEBLI PALETTE.'}
 ];
 const $=q=>document.querySelector(q),$$=q=>Array.from(document.querySelectorAll(q));
 const productGrid=$('#product-grid');
@@ -15,7 +10,7 @@ function renderProducts(category='all'){
  productGrid.innerHTML=visible.map((p,i)=>`<article class="product-card">
    <div class="product-media" data-show="${p.id}"><img src="${p.photo}" alt="Photographie : ${p.title}" loading="lazy"><span class="photo-index">${String(i+1).padStart(2,'0')}</span></div>
    <div class="product-meta"><span>${p.tag}</span><span>JEBLI / ${p.size}</span></div>
-   <div class="product-main"><div><h3>${p.title}</h3><p>Disponibilité et conditions sur demande</p></div>
+   <div class="product-main"><div><h3>${p.title}</h3><p>Mesure : ${p.size}</p><p class="stock-availability">Disponibilité : <strong>${p.availability}</strong></p></div>
    <div class="product-actions"><button type="button" data-detail="${p.id}" aria-label="Détails de ${p.title}">Détails ↗</button><button type="button" class="card-quote" data-quote="${p.id}" aria-label="Demander un devis pour ${p.title}">Devis ↗</button></div></div>
  </article>`).join('');
 }
@@ -31,7 +26,7 @@ dialog.addEventListener('click',e=>{if(e.target===dialog)hideDialog()});
 function detailProduct(id){const p=products.find(x=>x.id===id);if(!p)return;
  $('#dialog-image').src=p.photo;$('#dialog-image').alt=`Photo ${p.title}`;
  $('#dialog-title').textContent=p.title;$('#dialog-description').textContent=p.description;
- $('#dialog-meta').innerHTML=`<span>${p.size}</span><span>Prix sur devis</span>`;
+ $('#dialog-meta').innerHTML=`<span>Mesure : ${p.size}</span><span class="stock-availability">Disponibilité : <strong>${p.availability}</strong></span><span>Prix sur devis</span>`;
  $('#dialog-quote').onclick=()=>quoteProduct(id);
  if(typeof dialog.showModal==='function')dialog.showModal();
 }
