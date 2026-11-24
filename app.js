@@ -70,10 +70,17 @@ form.addEventListener('submit',async e=>{
  if(location.protocol==='file:'){feedbackMessage('Le site est ouvert localement : choisissez l’envoi depuis votre messagerie.',false,mailLink);return}
  const button=form.querySelector('[type="submit"]'),old=button.innerHTML;button.disabled=true;button.textContent='Transmission en cours…';
  try{
-  const res=await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(config.email)}`,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({name,email,'Téléphone':phone,message,_subject:'Demande de devis - JEBLI PALETTE',_template:'table'})});
+  const res=await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(config.email)}`,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({name,email,'Téléphone':phone,message,_subject:'Nouvelle demande de devis - JEBLI PALETTE',_replyto:email,_url:'https://jeblipalette.com/',_template:'table'})});
   const result=await res.json();
-  if(!res.ok||![true,'true'].includes(result.success))throw new Error('Envoi non confirmé');
-  feedbackMessage('La demande a été acceptée par le service d’envoi. La première utilisation de FormSubmit nécessite la confirmation de la boîte destinataire.');
+  if(!res.ok||![true,'true'].includes(result?.success)){
+   const detail=String(result?.message||'');
+   if(/activat|confirm/i.test(detail)){
+    feedbackMessage('Le formulaire est en cours d’activation. Votre message n’est pas encore confirmé : veuillez nous écrire directement par e-mail en attendant.',true,mailLink);
+    return;
+   }
+   throw new Error(detail||'Envoi non confirmé');
+  }
+  feedbackMessage('Votre demande a bien été transmise. Merci ! Nous vous répondrons dès que possible.');
   form.reset();required.forEach(el=>el.removeAttribute('aria-invalid'));
  }catch(err){feedbackMessage('L’envoi automatique n’a pas pu être confirmé. Vous pouvez envoyer le message directement depuis votre messagerie.',true,mailLink)}
  finally{button.disabled=false;button.innerHTML=old}
